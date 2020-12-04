@@ -84,14 +84,14 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: website'
             inputs:
-              azureSubscription: '020_2_TAIS_Azure_PoC'
+              azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appName: '$(WebAppName)'
               appType: webAppLinux
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.Web.zip'
           - task: AzureFunctionApp@1
             displayName: 'Azure Function Deploy: leaderboard'
             inputs:
-              azureSubscription: '020_2_TAIS_Azure_PoC'
+              azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appType: functionAppLinux
               appName: '$(LeaderboardAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.LeaderboardFunction.zip'
